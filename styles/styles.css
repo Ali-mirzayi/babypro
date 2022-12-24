@@ -1,0 +1,12 @@
+body {
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+      'Arial', sans-serif;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+a, button {
+  touch-action: manipulation; /* Element doesn't want double-tap on mobile to zoom */
+  text-decoration: none;
+  color: black;
+}
