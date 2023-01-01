@@ -127,11 +127,10 @@ function Login() {
                             {visible ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                     </div>
-                    <Button type="submit" sx={errors.email || errors.password ? {backgroundColor:"red"} : {backgroundColor:"blue"}} >ورود به حساب</Button>
+                    <Button type="submit" disabled={errors.email || errors.password ? true : false} className={styles.btn} sx={errors.email || errors.password ? {backgroundColor:"red"} : {backgroundColor:"blue"}}>ورود به حساب</Button>
                     <Link href="/signup"><p className={styles.signup}>ثبت نام</p></Link>
                 </form>
             </Paper>
-            {/* { "&:hover": { backgroundColor: '#DBB95E' }, display: "block", margin: 2, backgroundColor: '#FFD04C', fontSize: "20px",color:"white" } */}
             <div>
                 <Dialog
                     open={open}
