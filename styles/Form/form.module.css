@@ -1,0 +1,35 @@
+.div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.inputdiv{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width:fit-content;
+}
+
+.grid{
+    grid-template-columns:repeat(1,minmax(0,1fr));
+}
+
+@media only screen and (min-width:730px) {
+    .div{
+        flex-direction: row;
+    }
+    .grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media only screen and (min-width:1030px) {
+    .div{
+        flex-direction: row;
+    }
+    .grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
