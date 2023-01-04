@@ -3,17 +3,17 @@ import { alpha, styled } from '@mui/material/styles';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 
 const CustomInput = styled(TextField)<TextFieldProps>(() => ({
-  width: '200px',
-  "& div": { padding: 0,borderRadius: '20px' },
+  maxWidth: '200px',
+  "& div": { padding: 0,borderRadius: '8px',height: '40px'},
   '& label': {
     transformOrigin: "top right !important",
     right: "1.8rem !important",
     color: '#000000',
   },
   "& legend": {
-    textAlign: "right",
+    textAlign: "right"
   },
-  "& textarea": { padding: '16.5px 14px' },
+  "& textarea": { padding: '8px 14px' }, //!!!!
   "& .MuiFormHelperText-root": { textAlign: "right" },
   '& label.Mui-focused': {
     color: '#000000',
@@ -24,14 +24,14 @@ const CustomInput = styled(TextField)<TextFieldProps>(() => ({
       // borderRadius: '20px'
     },
     '&:hover fieldset': {
-      borderColor: 'white',
+      borderColor: '#000000',
     },
     '&.Mui-focused': {
       borderColor: '#00508e',
-      boxShadow: `${alpha('#00508e', 0.25)} 0 5px 11px 2px`,
+      // boxShadow: `${alpha('#00508e', 0.25)} 0 5px 11px 2px`,
       // borderRadius: '20px'
     }, '&.Mui-focused fieldset': {
-      borderColor: '#00508e'
+      borderColor: '#3877ff'
     },
   },
 }));

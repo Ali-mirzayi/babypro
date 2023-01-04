@@ -65,44 +65,47 @@ function Form() {
     }
 
     return (
-
-        <Box component="form" onSubmit={(e) => handleSubmit(e)} sx={{ direction: "rtl", margin: "100px auto", width: "fit-content", backgroundColor: "#8CA6DB", padding: "10px", borderRadius: "5px" }}>
+        <Box component="form" onSubmit={(e) => handleSubmit(e)} sx={{ direction: "rtl", margin: "100px auto", width: "fit-content", backgroundColor: "#fcfcfc", padding: "20px", borderRadius: "5px"}}>
             <h2>نوع بازرسی</h2>
             <Checkboxs useCheck={[checked, setChecked]} />
             <div style={{ margin: "20px 20px 20px auto", width: "fit-content" }}>
                 <CustomInput name="name18" value={inputs.name18 || ""} onChange={handleChange} placeholder="سایر گواهی" sx={{ width: "320px"}} />
             </div>
             <Divider sx={{ margin: "30px", borderColor: "white" }} />
-            <div className={styles.div} style={{ display: "flex", alignItems: "flex-start" }}>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شرح کالا و شماره تعرفه</p><CustomInput name="name1" value={inputs.name1 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شماره ثبت سفارش</p><CustomInput name="name2" value={inputs.name2 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
+            <div className={styles.div} style={{ display: "flex", alignItems: "flex-end" }}>
+                <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>شرح کالا و شماره تعرفه</p><CustomInput name="name1" value={inputs.name1 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>شماره ثبت سفارش</p><CustomInput name="name2" value={inputs.name2 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
             </div>
-            <Divider sx={{ margin: "10px 30px 30px", borderColor: "white" }} />
+            <Divider sx={{ margin: "10px 30px 30px", borderColor: "#c1c1c1" }} />
             <div>
                 <h2 style={{ margin: "20px" }}>خریدار خدمات:</h2>
-                <div className={styles.grid} style={{ display: "grid", justifyItems: "center" }}>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>نام شرکت</p><CustomInput name="name3" value={inputs.name3 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>تلفن</p><CustomInput name="name4" value={inputs.name4 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>فکس</p><CustomInput name="name5" value={inputs.name5 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>کد اقتصادی</p><CustomInput name="name6" value={inputs.name6 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>آدرس</p><CustomInput name="name7" value={inputs.name7 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>رابط</p><CustomInput name="name8" value={inputs.name8 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>موبایل</p><CustomInput name="name9" value={inputs.name9 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>ایمیل</p><CustomInput label="ایمیل" name="name10" value={inputs.name10 || ""} onChange={handleChange} placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شناسه ملی </p><CustomInput label="ایمیل" name="name11" value={inputs.name11 || ""} onChange={handleChange} placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                    <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>مدیر عامل</p><CustomInput label="ایمیل" name="name12" value={inputs.name12 || ""} onChange={handleChange} placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
+                <div className={styles.grid} style={{ display: "grid", justifyItems: "flex-end" }}>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>نام شرکت</p><CustomInput name="name3" value={inputs.name3 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>تلفن</p><CustomInput name="name4" value={inputs.name4 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>فکس</p><CustomInput name="name5" value={inputs.name5 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>کد اقتصادی</p><CustomInput name="name6" value={inputs.name6 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>آدرس</p><CustomInput name="name7" value={inputs.name7 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>رابط</p><CustomInput name="name8" value={inputs.name8 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>موبایل</p><CustomInput name="name9" value={inputs.name9 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>ایمیل</p><CustomInput name="name10" value={inputs.name10 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>شناسه ملی </p><CustomInput name="name11" value={inputs.name11 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                    <div className={styles.inputdiv}><p style={{ margin: "12px", textAlign: "center", fontWeight: "bold" }}>مدیر عامل</p><CustomInput name="name12" value={inputs.name12 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
                 </div>
             </div>
-            <Divider sx={{ margin: "10px 30px 30px", borderColor: "white" }} />
+            <Divider sx={{ margin: "10px 30px 30px", borderColor: "#c1c1c1" }} />
             <h2 style={{ margin: "20px" }}>مشخصات کالا</h2>
-            <div className={styles.grid} style={{ display: "grid", justifyItems: "center" }}>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شماره کوتاژ</p><CustomInput name="name13" value={inputs.name13 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شماره قبض انبار</p><CustomInput name="name14" value={inputs.name14 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شماره بارنامه</p><CustomInput name="name15" value={inputs.name15 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>شماره پروفرما</p><CustomInput name="name16" value={inputs.name16 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
-                <div className={styles.inputdiv}><p style={{ margin: "5px", textAlign: "center", fontWeight: "bold" }}>تاریخ پروفرما </p><CustomInput name="name17" value={inputs.name17 || ""} onChange={handleChange} label="ایمیل" placeholder="ایمیل خود را وارد کنید..." sx={{ width: "220px" }} /></div>
+            <div className={styles.grid} style={{ display: "grid", justifyItems: "flex-end" }}>
+                <div className={styles.inputdiv}><p style={{ margin: "7px", textAlign: "center", fontWeight: "bold" }}>شماره کوتاژ</p><CustomInput name="name13" value={inputs.name13 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                <div className={styles.inputdiv}><p style={{ margin: "7px", textAlign: "center", fontWeight: "bold" }}>شماره قبض انبار</p><CustomInput name="name14" value={inputs.name14 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                <div className={styles.inputdiv}><p style={{ margin: "7px", textAlign: "center", fontWeight: "bold" }}>شماره بارنامه</p><CustomInput name="name15" value={inputs.name15 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                <div className={styles.inputdiv}><p style={{ margin: "7px", textAlign: "center", fontWeight: "bold" }}>شماره پروفرما</p><CustomInput name="name16" value={inputs.name16 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
+                <div className={styles.inputdiv}><p style={{ margin: "7px", textAlign: "center", fontWeight: "bold" }}>تاریخ پروفرما </p><CustomInput name="name17" value={inputs.name17 || ""} onChange={handleChange} sx={{ width: "220px" }} /></div>
             </div>
-            <Button type="submit" sx={{width:"100%",color:"white",backgroundColor:"#007e73","&:hover":{backgroundColor:"#00534c"},fontSize:"18px"}} >ورود به حساب</Button>
+            <div style={{display:'flex',justifyContent:"center"}}>
+            <div style={{maxWidth:"800px"}}>
+               <Button type="submit" sx={{width:"100%",color:"white",backgroundColor:"#007e73","&:hover":{backgroundColor:"#00534c"},fontSize:"18px",margin:"20px"}} >ورود به حساب</Button>
+            </div>
+            </div>
         </Box>);
 }
 

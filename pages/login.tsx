@@ -18,6 +18,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import CustomInput from '../src/Mui/TextField';
 import styles from '../styles/Login/Login.module.css';
+import axios from "axios";
 
 type UserSubmitForm = {
     email: string;
@@ -52,24 +53,49 @@ function Login() {
     );
 
     const onSubmit = async (data: UserSubmitForm) => {
+
         try {
-            const response = await fetch('{{protocol}}{{siteName}}/users/6266777d57382227590be522', {
-                method: 'Delete',
-                body: JSON.stringify(data)
-            })
-                .then(res => res.json())
-            if (response.accessToken) {
-                Cookies.set("accessToken", response.accessToken);
-                Cookies.set("expirationTime", response.expirationTime);
-                router.push('/dashboard');
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_PORTOCOL}${process.env.NEXT_PUBLIC_SITENAME}/users`,JSON.stringify(data),{
+                headers: { 'Content-Type': 'application/json' },
+                params: {}
+            });
+        } catch (error: any) {
+            if (error.response) {
+                // Request made but the server responded with an error
+                console.log(error.response.data);
+                console.log(error.response.status);
+            } else if (error.request) {
+                // Request made but no response is received from the server.
+                console.log(error.request);
             } else {
-                setOpen(true);
+                // Error occurred while setting up the request
+                console.log('Error', error.message);
             }
-        } catch {
-            setOpen(true);
         }
-        reset();
     }
+
+
+    // const onSubmit = async (data: UserSubmitForm) => {
+    //     try {
+    //         const response = await fetch('http://localhost:3000/api/upload', {
+    //             method: 'post',
+    //             body: JSON.stringify(data)
+    //         })
+    //             .then(res => res.json());
+    //             console.log(data);
+    //             console.log(response);
+    //         if (response.accessToken) {
+    //             Cookies.set("accessToken", response.accessToken);
+    //             Cookies.set("expirationTime", response.expirationTime);
+    //             router.push('/dashboard');
+    //         } else {
+    //             setOpen(true);
+    //         }
+    //     } catch {
+    //         setOpen(true);
+    //     }
+    //     reset();
+    // }
 
     const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
@@ -82,7 +108,7 @@ function Login() {
     const handleClose = () => {
         setOpen(false);
     };
-    console.log(errors);
+    // console.log(errors);
 
     return (<>
         <Head>
